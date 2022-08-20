@@ -79,10 +79,11 @@ const SignupForm = () => {
       setCredentials([...credentials, values]);
     },
   });
+  console.log(credentials);
 
   return (
     <div>
-      <h1 className="heading">Formik Form Task</h1>
+      <h1 className="heading">Formik Task</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="personal-details-container">
           <h6>Personal Details</h6>

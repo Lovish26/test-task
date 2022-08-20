@@ -3,7 +3,7 @@ import React from "react";
 const Table = (props) => {
   const { credentials } = props;
   return (
-    <div>
+    <div className="table">
       <h1 className="heading">Table</h1>
       <table>
         <tbody>
@@ -19,6 +19,10 @@ const Table = (props) => {
             <th>State</th>
             <th>Country</th>
             <th>Pincode</th>
+            <th>Occupation</th>
+            <th>Religion</th>
+            <th>Marital Status</th>
+            <th>Blood Group</th>
           </tr>
           {credentials.map((credentials, index) => (
             <tr key={index}>
@@ -33,10 +37,19 @@ const Table = (props) => {
               <td>{credentials.state}</td>
               <td>{credentials.country}</td>
               <td>{credentials.pincode}</td>
+              <td>{credentials.occupation ? credentials.occupation : "-"}</td>
+              <td>{credentials.religion ? credentials.religion : "-"}</td>
+              <td>
+                {credentials.maritalStatus ? credentials.maritalStatus : "-"}
+              </td>
+              <td>{credentials.bloodGroup ? credentials.bloodGroup : "-"}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <p>
+        Note: <span>Fields that are not defined are shown as hyphen (-)</span>
+      </p>
     </div>
   );
 };
