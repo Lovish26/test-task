@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.heading {
+  color: white;
+  background-color: #555;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+form {
+  max-width: 120rem;
+  margin: 2.4rem auto;
+}
+form h6 {
+  display: inline-block;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #666;
+  margin-bottom: 1.4rem;
+}
+
+form label {
+  font-size: 1.4rem;
+  padding-right: 0.8rem;
+}
+
+form label span {
+  color: red;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border: 0.1rem solid #d9d5e0;
+}
+
+.personal-details-container {
+  margin: 1.4rem 0;
+}
+.contact-details-container {
+  margin: 1.4rem 0;
+}
+.address-details-container {
+  margin: 1.4rem 0;
+}
+
+.row {
+  display: flex;
+  gap: 3.6rem;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+#name {
+  width: 90%;
+}
+
+#dob {
+  width: 24rem;
+}
+
+#mobile {
+  width: 60%;
+  margin-left: 0.4rem;
+}
+
+#govtIdType {
+  margin-right: 1.6rem;
+}
+#email {
+  width: 80%;
+}
+#guardianLabel {
+  margin-right: 1.6rem;
+}
+#address {
+  width: 85%;
+}
+
+#country {
+  width: 50%;
+}
+#pincode {
+  margin-right: 26rem;
+}
+#occupation {
+  width: 70%;
+}
+
+.form-btn {
+  border: none;
+  display: block;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 0.4rem;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-left: auto;
+}
+
+.form-btn:hover {
+  background-color: #45a049;
+}
+
+.error-msg {
+  color: red;
+  height: 1.5rem;
+}
+
+/* TABLE */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 12rem;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 0.8rem;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
