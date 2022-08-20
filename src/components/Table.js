@@ -8,25 +8,33 @@ const Table = (props) => {
       <table>
         <tbody>
           <tr>
+            <th>S No.</th>
             <th>Name</th>
             <th>DOB/Age</th>
             <th>Gender</th>
             <th>Mobile No.</th>
             <th>Email</th>
+            <th>Address</th>
+            <th>City</th>
             <th>State</th>
             <th>Country</th>
             <th>Pincode</th>
           </tr>
-          <tr>
-            <td>{credentials.name}</td>
-            <td>{credentials.dob}</td>
-            <td>{credentials.sex ? credentials.sex : "-"}</td>
-            <td>{credentials.mobile}</td>
-            <td>{credentials.email}</td>
-            <td>{credentials.state}</td>
-            <td>{credentials.country}</td>
-            <td>{credentials.pincode}</td>
-          </tr>
+          {credentials.map((credentials, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{credentials.name}</td>
+              <td>{credentials.dob}</td>
+              <td>{credentials.sex ? credentials.sex : "-"}</td>
+              <td>{credentials.mobile}</td>
+              <td>{credentials.email}</td>
+              <td>{credentials.address}</td>
+              <td>{credentials.city}</td>
+              <td>{credentials.state}</td>
+              <td>{credentials.country}</td>
+              <td>{credentials.pincode}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

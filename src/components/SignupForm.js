@@ -76,13 +76,9 @@ const SignupForm = () => {
       nationality: Yup.string().matches(/^[a-zA-Z]*$/, "Invalid nationality"),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      console.log(credentials);
-      setCredentials(...credentials, values);
+      setCredentials([...credentials, values]);
     },
   });
-
-  console.log(credentials.length);
 
   return (
     <div>
@@ -459,7 +455,7 @@ const SignupForm = () => {
           Submit
         </button>
       </form>
-      {credentials ? <Table credentials={credentials} /> : null}
+      {credentials.length >= 1 ? <Table credentials={credentials} /> : null}
     </div>
   );
 };
