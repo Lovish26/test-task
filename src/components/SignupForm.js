@@ -5,6 +5,15 @@ import Table from "./Table";
 
 const SignupForm = () => {
   const [credentials, setCredentials] = useState([]);
+  const [filterText, setFilterText] = useState("");
+
+  // Filtered Data
+  const filteredTable = credentials?.filter((el) => {
+    return el.name.includes(filterText);
+  });
+
+  // console.log(filterText);
+  // console.log(filteredTable);
 
   const formik = useFormik({
     initialValues: {
@@ -35,6 +44,7 @@ const SignupForm = () => {
         .min(3, "Must be 3 characters or more")
         .max(30, "Must be 30 characters or less")
         .required("Required"),
+
       dob: Yup.string()
         .matches(/^[0-9 /]*$/, "Invalid Date of Birth or Age")
         .required("Required"),
@@ -79,7 +89,7 @@ const SignupForm = () => {
       setCredentials([...credentials, values]);
     },
   });
-  console.log(credentials);
+  // console.log(credentials);
 
   return (
     <div>
@@ -456,7 +466,26 @@ const SignupForm = () => {
           Submit
         </button>
       </form>
-      {credentials.length >= 1 ? <Table credentials={credentials} /> : null}
+      {credentials.length >= 1 ? (
+        <div>
+          <form>
+            <label htmlFor="filter">Filter with Name: </label>
+            <input
+              type="text"
+              id="filter"
+              value={filterText}
+              onChange={(e) => setFilterText(e.target.value)}
+            />
+          </form>
+        </div>
+      ) : null}
+      {credentials.length >= 1 ? (
+        <Table
+          credentials={credentials}
+          filteredTable={filteredTable}
+          filterText={filterText}
+        />
+      ) : null}
     </div>
   );
 };
